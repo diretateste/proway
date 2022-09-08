@@ -7,8 +7,8 @@ class Veiculos extends ActiveRecord{
 
     public function rules(){
         return [
-            [['modelo', 'fk_marca', 'modelo', 'ano', 'valor', 'zerokm'], 'required'],
-            ['ano', 'status', 'integer']
+            [['modelo', 'fk_marca', 'ano', 'valor', 'zerokm'], 'required'],
+            ['ano', 'zerokm', 'integer']
         ];
     }
 
