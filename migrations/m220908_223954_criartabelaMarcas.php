@@ -16,7 +16,7 @@ class m220908_223954_criartabelaMarcas extends Migration
             'id' => $this->primaryKey(),
             'nome' => $this->string(255)->notNull(),
             'status' => $this->integer(1)->notNull()->defaultValue(1),
-            'dataAlteracao' => $this->timestamp()->defaultExpression('NOW()'),
+            'dataAlteracao' => $this->timestamp()->defaultValue(null)->append('ON UPDATE CURRENT_TIMESTAMP'),
             'dataCadastro' => $this->timestamp()->defaultExpression('NOW()')
         ]);
     }
