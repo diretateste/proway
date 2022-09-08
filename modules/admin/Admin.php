@@ -3,8 +3,7 @@
 namespace app\modules\admin;
 
 
-class Estoque extends \yii\base\Module
-{
+class Admin extends \yii\base\Module {
 
     public function init()
     {
