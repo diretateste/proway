@@ -10,6 +10,10 @@ class myFormatterComponent extends Formatter{
         return $n == 1 ? 'Ativo' : 'Inativo';
     }
 
+    public function asZerokm($n){
+        return $n == 1 ? 'Sim' : 'Não';
+    }
+
     public function asCelular($n){
 
         $cel = '('.substr($n,0,2).')';
@@ -29,5 +33,6 @@ class myFormatterComponent extends Formatter{
 
         return $cel;
     }
+
 
 }

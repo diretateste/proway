@@ -1,19 +1,68 @@
 <?php
 
-
+use app\modules\admin\models\Marca;
 use app\uteis\Uteis;
-use yii\bootstrap4\ActiveForm;
-use yii\bootstrap4\Html;
+use app\widgets\Switches;
+use yii\bootstrap4\LinkPager;
+use yii\grid\ActionColumn;
+use yii\grid\GridView;
+use yii\helpers\Url;
 
-$form = ActiveForm::begin();
+echo <<<HTML
+<div class="row">
+    <div class="col-md-8">
+        <h2>$this->title</h2>
+    </div>
+    <div class="col-md-4 text-right">
+       $action  
+    </div>
+</div>
+HTML;
 
-echo $form->field($model,'marca');
-echo $form->field($model,'modelo');
-echo $form->field($model,'ano');
-echo $form->field($model,'valor');
-echo $form->field($model, 'zerokm')->dropdownList(Uteis::getStatus(),['prompt' => 'Selecione']);
 
-echo Html::submitButton('Salvar', ['class' => 'btn btn-primary']);
-ActiveForm::end();
+echo GridView::widget([
+    'dataProvider' => $dataProvider,
+    'pager' => [
+        'class' => LinkPager::class
+    ],
+    'layout' => '{items} <div class="row"><div class="col-md-8">{pager}</div> <div class="col-md-4 text-right">{summary}</div></div>',
+    'columns' => [
+        [
+            'attribute' => 'id',
+            'label' => 'Código'
+        ],
+        'modelo',
+        [
+            'attribute' => 'fk_marca',
+            'value' => 'marca.nome'
+        ],
+        'ano',
+        'valor',
+        [
+            'attribute' => 'zerokm',
+            'content' => function($dataProvider){
+                return Uteis::onZerokm($dataProvider->zerokm);
+            }
+        ],
+        // [
+        //     'attribute' => 'status',
+        //     'headerOptions' => ['width' => '40'],
+        //     'content' => function($dataProvider, $key, $index, $grid){
+        //         return Switches::widget([
+        //             'field' => 'status'.$key,
+        //             'id' => $dataProvider->id,
+        //             'value' => $dataProvider->status,
+        //             'label' => Uteis::onStatus($dataProvider->status),
+        //             'action' => Url::base(true).'/index.php?r=categorias/changestatus'
+        //         ]);
+        //     }
+        // ],
+        [
+            'class' => ActionColumn::class,
+            'header' => 'Ações',
+            'headerOptions' => ['style' => 'width:60px;', 'class' => 'text-primary'],
+            'template'=>'{update}{delete}',
 
-?>
+        ],
+    ]
+]);

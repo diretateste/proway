@@ -12,6 +12,15 @@ class Uteis{
         return $status[$st];    
     }
 
+    public static function getZerokm(){
+        return ['Não', 'Sim'];     
+    }      
+
+    public static function onZerokm($st){         
+        $status = ['Não', 'Sim'];         
+        return $status[$st];    
+    }
+
     public static function getUf($sig){
         $estados = [
             "AC" => "Acre", 
