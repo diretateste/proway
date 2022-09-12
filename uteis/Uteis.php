@@ -12,11 +12,11 @@ class Uteis{
         return $status[$st];    
     }
 
-    public static function getZerokm(){
+    public static function getVstatus(){
         return ['Não', 'Sim'];     
     }      
 
-    public static function onZerokm($st){         
+    public static function onVstatus($st){         
         $status = ['Não', 'Sim'];         
         return $status[$st];    
     }

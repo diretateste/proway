@@ -18,7 +18,7 @@ class m220908_225043_criartabelaVeiculos extends Migration
            'modelo' => $this->text()->notNull(),
            'ano' => $this->integer()->notNull(),
            'valor' => $this->decimal(10,2)->notNull(),
-           'zerokm' => $this->smallInteger(1)->notNull()->defaultValue(1),
+           'status' => $this->smallInteger(1)->notNull()->defaultValue(1),
            'dataCadastro' => $this->timestamp()->defaultExpression('NOW()'),
            'dataAlteracao' => $this->timestamp()->defaultValue(null)->append('ON UPDATE CURRENT_TIMESTAMP')
         ]);

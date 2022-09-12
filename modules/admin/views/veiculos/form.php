@@ -39,8 +39,8 @@ echo $form->field($model,'ano',['options' => ['class' => 'form-group col-sm-4']]
 echo $form->field($model,'valor',['options' => ['class' => 'form-group col-sm-4']])->input('decimal')->widget(MaskedInput::class, ['mask' => ['99999.99', '999999.99']]);;
 
 
-echo $form->field($model, 'zerokm',['options' => ['class' => 'form-group col-sm-4']])->dropdownList(
-    Uteis::getZerokm(), 
+echo $form->field($model, 'status',['options' => ['class' => 'form-group col-sm-4']])->dropdownList(
+    Uteis::getVstatus(), 
     [
         'prompt' => 'Selecione'
     ]);

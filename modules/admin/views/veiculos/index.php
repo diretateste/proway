@@ -38,30 +38,32 @@ echo GridView::widget([
         ],
         'ano',
         'valor:Currency',
-        [
-            'attribute' => 'zerokm',
-            'content' => function($dataProvider){
-                return Uteis::onZerokm($dataProvider->zerokm);
-            }
-        ],
         // [
-        //     'attribute' => 'status',
-        //     'headerOptions' => ['width' => '40'],
-        //     'content' => function($dataProvider, $key, $index, $grid){
-        //         return Switches::widget([
-        //             'field' => 'status'.$key,
-        //             'id' => $dataProvider->id,
-        //             'value' => $dataProvider->status,
-        //             'label' => Uteis::onStatus($dataProvider->status),
-        //             'action' => Url::base(true).'/index.php?r=categorias/changestatus'
-        //         ]);
+        //     'attribute' => 'zerokm',
+        //     'content' => function ($dataProvider) {
+        //         return Uteis::onZerokm($dataProvider->zerokm);
         //     }
         // ],
+        [
+            'attribute' => 'status',
+            'headerOptions' => [
+                'class' => 'w40'
+            ],
+            'content' => function($model, $key, $index, $grid){
+                return Switches::widget([
+                    'field' => 'status'.$key,
+                    'id' => $model->id,
+                    'value' => $model->status,
+                    'label' => Uteis::onVstatus($model->status),
+                    'action' => Url::base(true).'/index.php?r=admin/veiculos/changestatus'
+                ]);
+            }
+        ],
         [
             'class' => ActionColumn::class,
             'header' => 'Ações',
             'headerOptions' => ['style' => 'width:60px;', 'class' => 'text-primary'],
-            'template'=>'{update}{delete}',
+            'template' => '{update}{delete}',
 
         ],
     ]

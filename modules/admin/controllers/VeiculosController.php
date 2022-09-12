@@ -3,6 +3,7 @@
 namespace app\modules\admin\controllers;
 
 use app\modules\admin\models\Veiculos;
+use app\uteis\Uteis;
 use Yii;
 use yii\bootstrap4\Html;
 use yii\data\ActiveDataProvider;
@@ -87,4 +88,39 @@ class VeiculosController extends Controller{
        
         return $this->redirect(['index']);
     }
+
+    public function actionChangestatus(){
+        $req = Yii::$app->request;
+
+        if($req->isAjax){
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            $veiculos = Veiculos::findOne($req->post('id'));
+            $veiculos->status = $req->post('status');
+
+            if ($veiculos->save()){
+                return [
+                    'data' => [
+                        'status' => 'success',
+                        'value' => $req->post('status'),
+                        'label' => Uteis::onVstatus($req->post('status')),
+                        'msg' => 'Status alterado com sucesso.'
+                    ],
+                    'code' => 0
+                ];
+            } else {
+                if ($veiculos->save()){
+                    return [
+                        'data' => [
+                            'status' => 'error',
+                            'msg' => 'Erro na alteração do status.'
+                    ],
+                    'code' => 1
+                ];   
+            }
+        }
+    }
 }
+
+}
+
+?>
