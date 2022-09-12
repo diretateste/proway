@@ -3,16 +3,33 @@
 namespace app\modules\admin\controllers;
 
 use app\modules\admin\models\Marca;
+use app\modules\admin\models\User;
 use app\modules\admin\models\Usuarios;
 use Yii;
 use yii\bootstrap4\Html;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 
 class UsuariosController extends Controller{
 
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+    
     public function actionIndex(){
-        $query = Usuarios::find();
+        $query = User::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -33,7 +50,7 @@ class UsuariosController extends Controller{
 
     public function actionCreate(){
 
-        $model = new Usuarios();
+        $model = new User();
         $request = Yii::$app->request;
 
         if($request->isPost && $model->load($request->post())){
@@ -55,7 +72,7 @@ class UsuariosController extends Controller{
 
     public function actionUpdate($id){
 
-        $model = Usuarios::findOne($id);
+        $model = User::findOne($id);
         $request = Yii::$app->request;
 
         if($model->load($request->post()) && $model->validate()){
@@ -76,7 +93,7 @@ class UsuariosController extends Controller{
     }
 
     public function actionDelete($id){
-        $model = Usuarios::findOne($id);
+        $model = User::findOne($id);
         
         if($model && $model->delete()){
             Yii::$app->session->setFlash('success', 'Registro Excluido');            
