@@ -8,10 +8,13 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    'name' => '<img src="../web/img/logo.png" width="30px"/>',
     'bootstrap' => ['log'],
     'language' => 'pt-BR',
-    'timeZone' => 'America/Sao_Paulo',
+    'sourceLanguage' => 'pt-BR',
     'charset' => 'utf-8',
+    'version' => '2.0',
+    'timezone' => 'America/Sao_Paulo',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
