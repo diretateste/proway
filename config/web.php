@@ -58,6 +58,10 @@ $config = [
             ],
         ],
         'db' => $db,
+
+        'gerarSenhaComponent' => [
+            'class' => 'app\components\gerarSenhaComponent'
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

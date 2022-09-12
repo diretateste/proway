@@ -45,7 +45,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 'url' => '#',
                 'items' => [
                     ['label' => 'Marcas', 'url' => ['marca/index']],
-                    ['label' => 'Veiculos',  'url' => ['veiculos/index']],
+                    ['label' => 'Veículos',  'url' => ['veiculos/index']],
+                    ['label' => 'Usuários',  'url' => ['usuarios/index']],
                 ],
             ],
             Yii::$app->user->isGuest
