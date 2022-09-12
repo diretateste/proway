@@ -36,7 +36,7 @@ echo Html::endTag('div');
 
 echo Html::beginTag('div', ['class' => 'row']);
 echo $form->field($model,'ano',['options' => ['class' => 'form-group col-sm-4']])->input('number');
-echo $form->field($model,'valor',['options' => ['class' => 'form-group col-sm-4']])->input('decimal');
+echo $form->field($model,'valor',['options' => ['class' => 'form-group col-sm-4']])->input('decimal')->widget(MaskedInput::class, ['mask' => ['99999.99', '999999.99']]);;
 
 
 echo $form->field($model, 'zerokm',['options' => ['class' => 'form-group col-sm-4']])->dropdownList(

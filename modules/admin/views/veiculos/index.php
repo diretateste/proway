@@ -37,7 +37,7 @@ echo GridView::widget([
             'value' => 'marca.nome'
         ],
         'ano',
-        'valor',
+        'valor:Currency',
         [
             'attribute' => 'zerokm',
             'content' => function($dataProvider){
