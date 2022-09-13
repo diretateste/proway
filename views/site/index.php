@@ -1,53 +1,37 @@
 <?php
 
-/** @var yii\web\View $this */
+use app\widgets\Carousel;
+use app\widgets\Jumbotron;
 
-$this->title = 'My Yii Application';
 ?>
-<div class="site-index">
+<?= Carousel::widget([
+        'controls' => true,
+        'indicators' => true,
+        'fade' => true,
+        'data' => [
+            [
+                'img' => 'https://img.olhardigital.com.br/wp-content/uploads/2022/04/homem-no-sol-capa-e-interna-1024x568.jpg',
+                'titulo' => 'Sol',
+                'texto' => 'texto de teste'
+            ],
+            [
+                'img' => 'https://st.depositphotos.com/1010338/2099/i/600/depositphotos_20999947-stock-photo-tropical-island-with-palms.jpg',
+                'titulo' => 'Arvores',
+                'texto' => 'outro teste'
+            ],
+            [
+                'img' => 'https://resultadosdigitais.com.br/files/2015/08/por-do-sol-e1440783856626.jpg',
+                'titulo' => 'Outro Titulo',
+                'texto' => 'Já tinha esse widget'
+            ]
+        ]
+    ]) ?>
 
-    <div class="jumbotron text-center bg-transparent">
-        <h1 class="display-4">Congratulations!</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
-</div>
+<?= Jumbotron::widget([
+        'titulo' => 'Congratulations!',
+        'texto1' => 'You have successfully created your Yii-powered application.!',
+        'texto2' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet eros non mi bibendum viverra. Morbi purus massa, sodales in eros quis, elementum tempus orci.',
+        'btnLabel' => 'Get started with Yii',
+        'btnAction' => 'http://www.yiiframework.com',
+    ]) ?>
