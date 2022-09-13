@@ -39,6 +39,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
+            ['label' => 'Início', 'url' => Yii::$app->homeUrl],
             Yii::$app->user->isGuest ? '': ['label' => 'Home', 'url' => ['/admin']],
             Yii::$app->user->isGuest ? '' : 
             [
