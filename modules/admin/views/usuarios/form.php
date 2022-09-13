@@ -25,7 +25,7 @@ echo Html::endTag('div');
 
 echo Html::beginTag('div', ['class' => 'row']);
 echo $form->field($model,'email',['options' => ['class' => 'form-group col-sm-6']])->input('email'); 
-echo $form->field($model, 'password',['options' => ['class' => 'form-group col-sm-6']])->input('text',['value' => $model->password ? $model->password : $senha->gerarSenha()]);
+echo $form->field($model, 'password',['options' => ['class' => 'form-group col-sm-6']])->input('password',['value' => $model->password ? $model->password : $senha->gerarSenha()]);
 
 echo Html::endTag('div');
 

@@ -55,6 +55,7 @@ class UsuariosController extends Controller{
 
         if($request->isPost && $model->load($request->post())){
             
+            $model->password = md5($model->password);
             if($model->save()){
                 return $this->redirect(['index']);
             } 
@@ -77,6 +78,7 @@ class UsuariosController extends Controller{
 
         if($model->load($request->post()) && $model->validate()){
             
+            $model->password = md5($model->password);
             if($model->save()){
                 Yii::$app->session->setFlash('success', 'Alterado com sucesso');
                 return $this->redirect(['index']);
