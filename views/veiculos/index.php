@@ -10,7 +10,7 @@ use yii\helpers\Url;
 echo "<form>";
 echo Html::beginTag('div', ['class' => 'row mt-3']);
 echo Html::hiddenInput('r', 'veiculos/index');
-echo Html::dropDownList('id', null, ArrayHelper::map(Marca::find()->all(), 'id', 'nome'), ['class' => 'col-sm-8', 'prompt' => 'Selecione']);
+echo Html::dropDownList('id', Yii::$app->request->get('id'), ArrayHelper::map(Marca::find()->all(), 'id', 'nome'), ['class' => 'col-sm-8', 'prompt' => 'Selecione']);
 echo Html::submitButton('Buscar',['class' => 'btn btn-primary col-sm-4']);
 echo Html::endTag('div');
 echo '</form>';
