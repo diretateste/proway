@@ -5,6 +5,7 @@ $basic = <<<HTML
       <img src="$img" class="card-img-top">
         <div class="card-body">
         <h5 class="card-title">$title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">$subTitle</h6>
         <p class="card-text">$text</p>
         $renderBtn
         </div>
