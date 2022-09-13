@@ -19,7 +19,7 @@ foreach($data as $key => $slide){
   $texto = $slide['texto'];
   $slides .= "
   <div class=\"carousel-item {$active}\" >
-    <img style=\"height: 200px;\" src=\"{$img}\" class=\"d-block w-100\">
+    <img style=\"height: 280px;\"src=\"{$img}\" class=\"d-block w-100\">
     <div class=\"carousel-caption d-none d-md-block\">
       <h5>{$titulo}</h5>
       <p>{$texto}</p>
