@@ -11,6 +11,7 @@ class Card extends Widget{
     public $width;
     public $img;
     public $title;
+    public $subTitle;
     public $text;
     public $btnLabel;
     public $btnAction;
@@ -29,6 +30,7 @@ class Card extends Widget{
                 'width' => $this->width,
                 'img' => $this->img,
                 'title' => $this->title,
+                'subTitle' => $this->subTitle,
                 'text' => $this->text,
                 'btnLabel' => $this->btnLabel,
                 'btnAction' => $this->btnAction,
