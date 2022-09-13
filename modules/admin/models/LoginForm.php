@@ -36,6 +36,14 @@ class LoginForm extends Model
         ];
     }
 
+    public function attributeLabels(){
+        return [
+            'email' => 'E-mail',
+            'password' => 'Senha',
+            'rememberMe' => 'Lembrar-me'
+        ];
+    }
+
     /**
      * Logs in a user using the provided username and password.
      * @return bool whether the user is logged in successfully

@@ -29,9 +29,9 @@ use app\widgets\Jumbotron;
 
 
 <?= Jumbotron::widget([
-        'titulo' => 'Congratulations!',
-        'texto1' => 'You have successfully created your Yii-powered application.!',
-        'texto2' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet eros non mi bibendum viverra. Morbi purus massa, sodales in eros quis, elementum tempus orci.',
-        'btnLabel' => 'Get started with Yii',
-        'btnAction' => 'http://www.yiiframework.com',
+        'titulo' => 'Bem Vindo!',
+        'texto1' => 'Sistema gerenciador de veículos',
+        'texto2' => 'Aqui você pode listar os veículos disponíveis por marca. Para cadastrar novos veículos faça o Login acessando o botão "Painel" no menu Superior, ou clique abaixo:',
+        'btnLabel' => 'Painel',
+        'btnAction' => 'http://localhost/proway/web/index.php?r=admin',
     ]) ?>
