@@ -18,13 +18,14 @@ echo '</form>';
 echo Html::beginTag('div', ['class' => 'row mt-3']);
 foreach($model as $valor) {
     $status = $valor['status'] == 1 ? 'Disponível' : 'Indisponível';
+    $val = Yii::$app->formatter->asCurrency($valor['valor']);
     echo Html::beginTag('div', ['class' => 'col-sm-4', 'style' => 'margin-bottom: 10px;']);
     echo Card::widget([
         'type' => 'basic',
         'width' => '300px',
         'title' => $valor['marca']['nome']. ' - '.$valor['modelo'],
         'subTitle' => $status, 
-        'text' => "{$valor['ano']} ",
+        'text' => "Ano: {$valor['ano']} <br> Valor: {$val}",
         'btnLabel' => 'Detalhes',
         'btnAction' => Url::base(true).'/index.php?r=veiculos/detalhes&id='.$valor['id'],
     ]);
