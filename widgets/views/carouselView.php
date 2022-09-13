@@ -11,7 +11,7 @@ $renderControls = ($controls) ? "
 " : '';
 
 $renderFade = ($fade) ? 'carousel-fade' : '';
-
+$slides = '';
 foreach($data as $key => $slide){
   $active = $key == 0 ? 'active' : '';
   $img = $slide['img'];
@@ -27,6 +27,7 @@ foreach($data as $key => $slide){
   </div>
   ";
 
+  $renderIndicators = '';
   if($indicators){
     $renderIndicators .= "<li data-target=\"#carouselExampleCaptions\" data-slide-to=\"{$key}\" class=\"{$active}\"></li>";
   }
