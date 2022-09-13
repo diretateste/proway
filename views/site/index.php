@@ -10,19 +10,19 @@ use app\widgets\Jumbotron;
         'fade' => true,
         'data' => [
             [
-                'img' => 'https://img.olhardigital.com.br/wp-content/uploads/2022/04/homem-no-sol-capa-e-interna-1024x568.jpg',
-                'titulo' => 'Sol',
-                'texto' => 'texto de teste'
+                'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzQd6RtXLtoSPj_9oU7HRCKamPyNPem6GkGw&usqp=CAU',
+                'titulo' => 'As melhores condições de pagamento',
+                'texto' => 'Confira'
             ],
             [
-                'img' => 'https://st.depositphotos.com/1010338/2099/i/600/depositphotos_20999947-stock-photo-tropical-island-with-palms.jpg',
-                'titulo' => 'Arvores',
-                'texto' => 'outro teste'
+                'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFQeRbBr0D_xs8wMM3exH3JJXmxZBfHo3QOg&usqp=CAU',
+                'titulo' => 'Veículos novos e usados',
+                'texto' => ''
             ],
             [
-                'img' => 'https://resultadosdigitais.com.br/files/2015/08/por-do-sol-e1440783856626.jpg',
-                'titulo' => 'Outro Titulo',
-                'texto' => 'Já tinha esse widget'
+                'img' => 'https://fortiliveiculos.com.br/wp-content/uploads/2019/07/Consigna%C3%A7%C3%A3o-de-Ve%C3%ADculos-novos-e-Seminovos-fortili-veiculos.jpg',
+                'titulo' => 'Todos os tipos de veículos',
+                'texto' => 'Confira'
             ]
         ]
     ]) ?>
