@@ -1,6 +1,7 @@
 <?php
 
 use app\components\myFormatterComponent;
+use yii\rbac\PhpManager;
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
@@ -25,6 +26,9 @@ $config = [
         ],
     ],
     'components' => [
+        'authManager' => [
+            'class' => PhpManager::class
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'ATz63HHRJQbSHaSRh_Jnu3pWXncui7us',

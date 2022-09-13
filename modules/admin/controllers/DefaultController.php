@@ -4,10 +4,43 @@ namespace app\modules\admin\controllers;
 
 use app\modules\admin\models\LoginForm;
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 
 class DefaultController extends Controller
 {
+
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['login', 'logout', 'index'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'logout'],    
+                        'roles' => ['@'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'login'],    
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['jogos'],
+                        'matchCallback' => function($rule, $action){
+                            return Yii::$app->user->identify->email == 'admin@admin.com';
+                        },
+                        'denyCallback' => function($rule, $action){
+                            return Yii::$app->user->identify->email == 'admin@admin.com';
+                        }
+                    ]
+                ],
+            ],
+        ];
+    }
 
     public function actionIndex()
     {
