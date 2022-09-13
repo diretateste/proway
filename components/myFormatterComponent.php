@@ -10,7 +10,7 @@ class myFormatterComponent extends Formatter{
         return $n == 1 ? 'Ativo' : 'Inativo';
     }
 
-    public function asZerokm($n){
+    public function asDisponivel($n){
         return $n == 1 ? 'Sim' : 'Não';
     }
 
