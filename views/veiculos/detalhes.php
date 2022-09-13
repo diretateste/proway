@@ -5,6 +5,16 @@ use yii\widgets\DetailView;
 
 echo DetailView::widget([
     'model' => $model,
+    'attributes' => [
+        'modelo',
+        [                      
+            'attribute' => 'fk_marca',
+            'value' => $model->marca->nome
+        ],
+        'ano',        
+        'valor:Currency',   
+        'status:disponivel',  
+    ],
 ]
 );
 

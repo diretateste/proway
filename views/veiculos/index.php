@@ -17,12 +17,13 @@ echo '</form>';
 
 echo Html::beginTag('div', ['class' => 'row mt-3']);
 foreach($model as $valor) {
+    $status = $valor['status'] == 1 ? 'Disponivel' : 'Indisponivel';
     echo Html::beginTag('div', ['class' => 'col-sm-4', 'style' => 'margin-bottom: 10px;']);
     echo Card::widget([
         'type' => 'basic',
         'width' => '300px',
         'title' => $valor['marca']['nome']. ' - '.$valor['modelo'],
-        'text' => 'Imagem aproximada em tons de cinza de uma águia careca americana em um fundo escuro',
+        'text' => "{$valor['ano']}  -  {$status}",
         'btnLabel' => 'Detalhes',
         'btnAction' => Url::base(true).'/index.php?r=veiculos/detalhes&id='.$valor['id'],
     ]);

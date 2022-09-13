@@ -20,9 +20,9 @@ class VeiculosController extends Controller{
         $id = Yii::$app->request->get('id');
         
         if($id){
-            $model = Veiculos::find()->joinWith(['marca'])->where(['fk_marca' => $id])->asArray()->all();
+            $model = Veiculos::find()->joinWith(['marca as m'])->where(['fk_marca' => $id, 'm.status' => 1])->asArray()->all();
         } else {
-            $model = Veiculos::find()->joinWith(['marca'])->asArray()->all();    
+            $model = Veiculos::find()->joinWith(['marca as m'])->where(['m.status' => 1])->asArray()->all();    
         }
 
 
