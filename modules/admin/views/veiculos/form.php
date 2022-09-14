@@ -25,7 +25,7 @@ $formatter = Yii::$app->formatter;
 $form = ActiveForm::begin();
 
 echo Html::beginTag('div', ['class' => 'row']);
-echo $form->field($model,'modelo',['options' => ['class' => 'form-group col-sm-6']]);
+echo $form->field($model,'modelo',['options' => ['class' => 'form-group col-sm-6']])->textInput(['style' => 'text-transform: uppercase']);
 echo $form->field($model,'fk_marca',['options' => ['class' => 'form-group col-sm-6']])->dropdownList(
     ArrayHelper::map(Marca::find()->all(), 'id', 'nome'),
     [

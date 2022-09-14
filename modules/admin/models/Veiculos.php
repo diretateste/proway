@@ -8,7 +8,8 @@ class Veiculos extends ActiveRecord{
     public function rules(){
         return [
             [['modelo', 'fk_marca', 'ano', 'valor', 'status'], 'required'],
-            ['ano', 'integer']
+            ['ano', 'integer'],
+            ['modelo', 'filter', 'filter' => function($value) {return mb_strtoupper($value, 'utf-8');}]
         ];
     }
 
